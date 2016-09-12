@@ -1,0 +1,11 @@
+<div class="resource">
+	<div  class="dropdown-toggle" data-toggle="dropdown">
+		<h3 data-bind="text: total"></h3>
+		<a data-bind="text: display_name"></a>
+	</div>
+	<!-- ko if: total > 0 -->
+	<ul class="dropdown-menu" data-bind='foreach: filtered_values'>
+		<li><a data-bind='text: $data.display'></a></li>
+	</ul>
+	<!-- /ko -->
+</div>

@@ -1,0 +1,20 @@
+<div class="event-component container">
+	<div class="row" data-bind='foreach: filters'>
+		<div class="section col-sm-4 col-md-4" data-bind='{
+				click: $parent.set_active.bind($parent),
+				css: {active: $data.active},
+				text: $data.display
+			}'>
+		</div>
+	</div>
+	<div class="row">
+		<div class="active-title col-sm-4 col-md-4 col-sm-offset-4 col-md-offset-4">
+			<h3 data-bind='text: current_filter().memo'><h3>
+		</div>
+	</div>
+	<div class="row" data-bind="foreach: resources">
+		<div class="col-sm-3 col-md-3">
+			<resource params='resource: $data, filter: $parent.current_filter'></resource>
+		</div>
+	</div>
+</div>
